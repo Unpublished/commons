@@ -12,7 +12,7 @@ fun setupStrictMode(
 ) {
     StrictMode.enableDefaults()
     val threadPolicyBuilder = ThreadPolicy.Builder(StrictMode.getThreadPolicy())
-    val badManufactures = hashSetOf("Google", "Nubia", "Xiaomi").map { m -> m.lowercase() }
+    val badManufactures = hashSetOf("Google", "Nubia", "OnePlus", "Xiaomi").map { m -> m.lowercase() }
     val isBad = Build.MANUFACTURER.lowercase() in badManufactures
     if (!isBad) {
         threadPolicyBuilder.penaltyDeath()
